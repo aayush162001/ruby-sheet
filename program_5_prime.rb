@@ -39,8 +39,16 @@ end
 
 print " Enter the Number : "
 
-num = gets.chomp.to_i
+num = gets.chomp
 object = Prime. new
-object.countprime(num)
 
+
+
+if num =~ /^-?[0-9]+$/
+    puts "Valid input"
+    num = num.to_i
+    object.countprime(num)
+else
+    puts "Invalid input. Please Input Interger number"
+end
 

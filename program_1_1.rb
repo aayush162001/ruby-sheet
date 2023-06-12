@@ -17,5 +17,12 @@ def star(num)
 end
 
 print "Enter the number of rows : "
-x = gets.chomp.to_i
-star(x)
+x = gets.chomp
+if x =~ /^-?[0-9]+$/
+    puts "Valid input"
+    x = x.to_i
+    star(x)
+else
+    puts "Invalid input. Please Input Interger number"
+end
+

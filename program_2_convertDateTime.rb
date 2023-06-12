@@ -26,14 +26,22 @@ end
 
 
 print "Enter Hours " 
-hours = gets.chomp.to_i
+hours = gets.chomp
 
 print "Enter Minute "
-minute = gets.chomp.to_i
+minute = gets.chomp
 
 print "Enter Seconds "
-seconds = gets.chomp.to_i
+seconds = gets.chomp
 
 object = ConvertTime.new
+if hours =~ /^-?[0-9]+$/ && minute =~ /^-?[0-9]+$/ && seconds =~ /^-?[0-9]+$/
+    puts "Valid input"
+    hours = hours.to_i
+    minute = minute.to_i
+    seconds = seconds.to_i
+    object.convert(hours,minute,seconds)
+else
+    puts "Invalid input. Please Input Interger number"
+end
 
-object.convert(hours,minute,seconds)
