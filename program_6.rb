@@ -22,7 +22,7 @@ class FindMaxMinNumberInArray
 end
 
 object = FindMaxMinNumberInArray.new
-arr = [111,555,[333,222.0,nil,'nil'],10,[11,9,7],5,1]
+arr = [111,555,[333,222.0,nil,'nisvsl'],10,[11,9,7],5,1]
 
 # print(arr3)
 object.MaxMinNumber(arr)

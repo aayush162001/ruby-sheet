@@ -2,7 +2,10 @@
 class CheckPalindrome
 
     def check(string)
-        if string == string.reverse
+        if string ==""
+            print "Enter the string! (Nil is not accepted)"
+            return
+        elsif string == string.reverse
             puts "It's Palindrome #{string}"
 
         else 

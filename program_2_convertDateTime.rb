@@ -27,7 +27,6 @@ end
 
 print "Enter Hours " 
 hours = gets.chomp
-
 print "Enter Minute "
 minute = gets.chomp
 
@@ -35,13 +34,34 @@ print "Enter Seconds "
 seconds = gets.chomp
 
 object = ConvertTime.new
-if hours =~ /^-?[0-9]+$/ && minute =~ /^-?[0-9]+$/ && seconds =~ /^-?[0-9]+$/
-    puts "Valid input"
+
+if hours == ""
+    hours = 0
+    # print hours
+    # hours = hours.to_i
+end
+if minute == ""
+    minute = 0
+end
+if seconds == ""
+    seconds = 0
+end
+
+if (hours =~ /^-?[0-9]+$/ || hours == 0) && (minute =~ /^-?[0-9]+$/ || minute == 0) && (seconds =~ /^-?[0-9]+$/ || seconds ==0) then
+    # print hours
     hours = hours.to_i
     minute = minute.to_i
     seconds = seconds.to_i
-    object.convert(hours,minute,seconds)
+    if ( hours >= 0 && hours <= 24  ) && (minute >= 0 && minute <= 60 )  && ( seconds >= 0  && seconds <= 60 )
+        # puts "Valid input"
+
+        object.convert(hours,minute,seconds)
+    else 
+        puts "Enter values in the range in 24hr format"
+    end
+
 else
     puts "Invalid input. Please Input Interger number"
+    return
 end
 
